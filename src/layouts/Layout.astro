@@ -12,10 +12,12 @@ const {
   lang,
   author,
   socialLinks,
-  socialImage,
-  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  canonicalURL,
 } = SITE_CONFIG;
 
+// Base URL for absolute paths
+const siteUrl = canonicalURL || "https://jaisleenportfolio.vercel.app";
+const blankImageUrl = `${siteUrl}/blank.png`;
 ---
 
 <!doctype html>
@@ -30,14 +32,19 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={blankImageUrl} />
 
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={siteUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={blankImageUrl} />
   </head>
   <body class="bg-black font-sans text-white">
     <Header siteLogo={siteLogo} navLinks={navLinks} />
