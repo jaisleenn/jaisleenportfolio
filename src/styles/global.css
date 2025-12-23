@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
+  --font-sans: "Time", system-ui, sans-serif;
   --font-serif: "Gabarito Variable", ui-serif, serif;
 
-  --color-primary: #2563eb;
-  --color-neutral: #94a3b8;
-  --color-white: #e2e8f0;
-  --color-black: #0e141b;
+  --color-primary: #6D8196;
+  --color-neutral: #6B6B6B;
+  --color-white: #4A4A4A;
+  --color-black: #f4f3ef;
 
   --text-xs: 0.875rem;
   --text-xs--line-height: 1.125rem;

@@ -2,16 +2,168 @@
 import { SITE_CONTENT } from "@config";
 import Hero from "@components/Hero.astro";
 import Layout from "@layouts/Layout.astro";
-import Experience from "@components/Experience.astro";
 import Projects from "@components/Projects.astro";
+import CampaignDetails from "@components/CampaignDetails.astro";
 import About from "@components/About.astro";
 
 import "../styles/global.css";
+
+const campaigns = [
+  {
+    id: "cohesity-campaign",
+    name: "Content & Campaigns",
+    pillars: [
+      {
+        title: "Day in the Life Series",
+        description: "Behind-the-scenes content showcasing intern experiences, daily workflows, and authentic moments at Cohesity.",
+        linkText: "View post ↗",
+        posts: [
+          {
+            image: "/dil1.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_cohesitynextgen-wearecohesity-cohesityintern-activity-7350963672535478273-4Ljz",
+            imagePosition: "object-top",
+          },
+          {
+            image: "/dil2.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_lifeatcohesity-cohesitycareers-dayinthelife-activity-7361076726598152192-QB2S",
+            imagePosition: "object-top",
+          },
+          {
+            image: "/dil3.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_cohesitynextgen-wearecohesity-cohesityintern-activity-7358508760782286850-ZOhp",
+          },
+        ],
+      },
+      {
+        title: "Intern Spotlight Series",
+        description: "A series of intern spotlight carousels highlighting four interns, their roles, projects, and growth, each ending with a Careers page call-to-action.",
+        linkText: "View spotlight ↗",
+        aspectRatio: "aspect-[4/5]",
+        posts: [
+          {
+            image: "/spotlight1.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_intern-spotlight-shreya-aiyer-activity-7364677300098891776-ejHq/",
+          },
+          {
+            image: "/spotlight2.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_intern-spotlight-kalyani-chitre-activity-7362166224253833216-xINm",
+          },
+          {
+            image: "/spotlight3.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_intern-spotlight-matthew-mechlowitz-activity-7359252085072146433-IAkP/",
+          },
+          {
+            image: "/spotlight4.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_jaisleen-nijjars-intern-spotlight-activity-7356783222304714752-QqZG/",
+          },
+        ],
+      },
+      {
+        title: "Culture Content",
+        description: "Content celebrating team culture, events, and the collaborative environment that defines the Cohesity experience.",
+        aspectRatio: "aspect-auto",
+        objectFit: "object-cover",
+        layoutClass: "flex flex-nowrap gap-6 items-start justify-start",
+        linkText: "View spotlight ↗",
+        posts: [
+          {
+            image: "/culture1.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_internationaldogday-wearecohesity-dataprotection-activity-7366098140036284416-L9P1/",
+            colSpan: "w-[30%]",
+            title: "International Dog Day",
+            description: "Celebrating pets, community, and work-life balance at Cohesity.",
+          },
+          {
+            image: "/culture2.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_internationalfriendshipday-wearecohesity-activity-7356425140747845633-YT8Z/",
+            colSpan: "w-[30%]",
+            title: "International Friendship Day",
+            description: "Highlighting partnerships, teamwork, and relationships beyond the workplace.",
+          },
+          {
+            image: "/culture3.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_lifeatcohesity-wearecohesity-activity-7355293423194550273-EMUH/",
+            colSpan: "w-[35%]",
+            title: "Company Clubhouse Event",
+            description: "Showcasing team connection and culture through an in-office community event.",
+          },
+        ],
+      },
+      {
+        title: "Brand & Company Highlights",
+        description: "Company-wide brand and awareness content I led during my time at Cohesity.",
+        aspectRatio: "aspect-auto",
+        objectFit: "object-cover",
+        layoutClass: "flex flex-nowrap gap-6 items-start justify-start",
+        linkText: "View spotlight ↗",
+        posts: [
+          {
+            image: "/highlight1.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_sysadminday-wearecohesity-resilienceeverywhere-activity-7354509275085357057-R1g6/",
+            colSpan: "w-[22%]",
+            title: "System Admin Day",
+            description: "Brand awareness content honoring the teams that keep Cohesity secure.",
+          },
+          {
+            image: "/highlight2.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_nationalinternday-cohesitynextgen-wearecohesity-activity-7356713087707607040-A_kA/",
+            colSpan: "w-[22%]",
+            title: "Meet the Interns",
+            description: "Employer branding introducing the intern cohort through authentic moments.",
+          },
+          {
+            image: "/highlight3.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_wearecohesity-resilienceeverywhere-cybersecurity-activity-7353775935986257922-FtkB/",
+            colSpan: "w-[22%]",
+            title: "Resilience Everywhere",
+            description: "Brand storytelling focused on cyber resilience and reliability.",
+          },
+          {
+            image: "/highlight4.png",
+            linkedInUrl: "https://www.linkedin.com/posts/cohesity_wearecohesity-lifeatcohesity-cohesitynextgen-activity-7361748085942726657-MAtq/",
+            colSpan: "w-[22%]",
+            title: "Intern Summer Recap",
+            description: "Employer branding showcasing intern learning, mentorship, and growth.",
+          },
+        ],
+      },
+    ],
+  },
+];
 ---
 
 <Layout>
   <Hero {...SITE_CONTENT.hero} />
-  <Experience experience={SITE_CONTENT.experience} />
   <Projects projects={SITE_CONTENT.projects} />
+  <CampaignDetails campaigns={campaigns} />
+  
+  <!-- Tools Section -->
+  <section class="py-16">
+    <h2 class="mb-8 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">Tools & Skills</h2>
+    <div class="flex flex-wrap gap-3">
+      {[
+        "Sprout Social",
+        "Jira",
+        "HubSpot",
+        "Google Analytics",
+        "LinkedIn Sales Navigator",
+        "Canva",
+        "Excel",
+        "Google Workspace",
+        "Performance Dashboards & Reporting",
+        "A/B Testing Tools",
+        "Competitive Research Tools",
+        "AI-Assisted Research & Ideation",
+        "Cross-Functional Collaboration",
+        "Campaign Planning & Execution",
+        "Marketing Funnel & Lifecycle Analysis"
+      ].map((tool) => (
+        <span class="rounded-full border border-neutral/30 bg-neutral/10 px-4 py-2 text-sm text-white">
+          {tool}
+        </span>
+      ))}
+    </div>
+  </section>
+
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
 </Layout>

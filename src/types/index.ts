@@ -36,6 +36,8 @@ export interface ProjectProps {
   image: string;
   linkPreview?: string;
   linkSource?: string;
+  campaignId?: string;
+  isNdaRestricted?: boolean;
 }
 
 export interface AboutProps {

@@ -1,23 +1,19 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Jaisleen Nijjar — Marketing Student",
+  author: "Jaisleen Nijjar",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Based in San Jose, CA, I'm focused on building impactful campaigns through strategy, content, and data. I've gained experience supporting go-to-market initiatives, lead generation, and data-informed decision-making, and I'm eager to continue learning across all areas of marketing.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/jaisleen-small.png",
   navLinks: [
-    { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "LinkedIn", href: "https://linkedin.com/in/jaisleen-nijjar/" },
+  
   ],
   socialImage: "/zen-og.png",
   canonicalURL: "https://astro-zen.vercel.app",
@@ -25,74 +21,96 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Jaisleen Nijjar",
+    specialty: "Marketing Student",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "I'm a marketing student based in San Jose, CA, focused on building impactful campaigns through strategy, content, and data. I've gained experience supporting go-to-market initiatives, lead generation, and data-informed decision-making, and I'm eager to continue learning across all areas of marketing.",
+    email: "jaisleen.nijjar@sjsu.edu",
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Cohesity",
+      position: "Project Manager",
+      startDate: "Aug 2025",
+      endDate: "Dec 2025",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Managed a team of 8 consultants through a 10-week digital strategy engagement, driving structured workstreams and on-time delivery aligned with client objectives.",
+        "Led comprehensive market research and competitive analyses (TikTok, LinkedIn, event marketing), synthesizing insights into data-backed recommendations to elevate Cohesity’s Gen Z and enterprise engagement strategy.",
+        "Served as the primary client-facing lead, translating research findings into strategic recommendations and maintaining executive-level communication that reinforced stakeholder confidence and partnership value.",
+      ],
+    }, 
+    {
+      company: "Cohesity",
+      position: "Social Media Intern",
+      startDate: "May 2025",
+      endDate: "Present",
+      summary: [
+        "Boosted intern program visibility via LinkedIn campaigns reaching 104K+ followers, driving 34K+ engagements (+22% YoY) and 31K+ link clicks (+17% YoY) in Q4 FY25.",
+        "Led content execution for intern recruiting initiatives across LinkedIn, IG, X, YouTube, and FB, generating 116K+ impressions (+29% YoY) and increasing brand reach.",
+        "Built and maintained content calendars and performance dashboards in Sprout Social and Jira, improving cross-team coordination and campaign agility.",
+        "Directed internal comms for the Veritas acquisition rollout, achieving a 46% click-to-open rate and engaging 7K+ employees with tailored messaging.",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Tesla",
+      position: "Marketing Consultant",
+      startDate: "Jan 2025",
+      endDate: "May 2025",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Sourced and qualified 350+ high-value B2B leads to support EV charger expansion across key sectors (healthcare, real estate, hospitality, aviation) in Phoenix, Atlanta, and Tampa.",
+        "Executed precision lead-generation campaigns using LinkedIn Sales Navigator, advanced Google search strategies, and CRM tools to connect with decision-makers (facilities, operations, and sustainability leads).",
+        "Optimized outreach performance through data-driven analysis of lead quality and campaign metrics, driving sharper targeting, higher engagement, and improved conversion efficiency.",
       ],
     },
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+      company: "SJSU Marketing Association",
+      position: "Social Media Analyst",
+      startDate: "Jan 2025",
+      endDate: "May 2025",
+      summary: [
+        "Created 11+ TikToks (22K+ views) and 30+ Instagram posts to grow brand presence and drive student engagement.",
+        "Analyzed cross-platform performance using native analytics tools to track reach, follower growth, and campaign success.",
+        "Delivered insights via monthly performance reports to refine content strategy and boost engagement.",
+        "Captured live content and behind-the-scenes moments at events to highlight campus engagement and build community through social storytelling.",
+      ],
+    },
+    {
+      company: "Mendel.ai",
+      position: "Marketing Consultant",
+      startDate: "Aug 2024",
+      endDate: "Dec 2024",
+      summary: [
+        "Contributed to cross-functional go-to-market strategy for Mendel.ai, aligning content, outreach, and buyer personas across clinical, director, and executive stakeholders, improving engagement and product positioning.",
+        "Developed a multichannel content roadmap leveraging LinkedIn, YouTube, and email automation tools (e.g., Sprout Social, Hubspot) to boost thought leadership and brand credibility in AI-powered clinical trials.",
+        "Identified and recommended strategic partnership opportunities with major pharma and tech firms to strengthen Mendel's credibility with investors.",
+        "Built and executed strategic partnership framework, identifying high-fit pharma and provider targets (e.g., Pfizer, Cleveland Clinic), and crafting tailored messaging to drive enterprise lead generation and pilot program adoption.",
+      ],
     },
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
+      name: "Content & Campaigns",
+      summary: "Led LinkedIn campaigns reaching 104K+ followers with 34K+ engagements and 31K+ link clicks, driving significant growth in intern program visibility.",
+      linkPreview: "#cohesity-campaign",
       linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      image: "/Linkedin.png",
+      campaignId: "cohesity-campaign",
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
-    },
-    {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      name: "Tesla EV Charger Lead Generation",
+      summary: "Sourced and qualified 350+ high-value B2B leads across healthcare, real estate, hospitality, and aviation sectors using LinkedIn Sales Navigator and advanced search strategies.",
+      image: "/tesla.png",
+      isNdaRestricted: true,
     },
   ],
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      I'm a marketing student focused on building impactful campaigns through strategy, content, and data. I'm currently studying Business Marketing at San José State University and gaining hands-on experience across campaign execution, market research, and performance analysis through internships and consulting projects.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+      I've worked on cross-functional marketing initiatives with companies like Cohesity, Tesla, and Mendel.ai, supporting go-to-market efforts, lead generation, and data-informed decision-making. I enjoy learning every stage of the marketing process and am excited to continue growing in roles that blend strategic thinking, creativity, and analytics.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/jaisleen-big.png",
   },
 };
 
-// #5755ff
+// #950060
