@@ -12,12 +12,12 @@ const {
   lang,
   author,
   socialLinks,
-  canonicalURL,
 } = SITE_CONFIG;
 
-// Base URL for absolute paths
-const siteUrl = canonicalURL || "https://jaisleenportfolio.vercel.app";
-const blankImageUrl = `${siteUrl}/blank.png`;
+// Use Astro.site from astro.config.mjs for absolute URLs
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || "https://jaisleenportfolio.vercel.app";
+const currentPageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const blankImageUrl = new URL("/blank.png", Astro.site).href;
 ---
 
 <!doctype html>
@@ -36,12 +36,12 @@ const blankImageUrl = `${siteUrl}/blank.png`;
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={currentPageUrl} />
     <meta property="og:image" content={blankImageUrl} />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content={siteUrl} />
+    <meta name="twitter:url" content={currentPageUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={blankImageUrl} />
