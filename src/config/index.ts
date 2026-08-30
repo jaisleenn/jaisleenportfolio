@@ -23,8 +23,9 @@ export const SITE_CONTENT: SiteContent = {
   hero: {
     name: "Jaisleen Nijjar",
     specialty: "Marketing Student",
-    summary:
-      "I'm a marketing student based in San Jose, CA, focused on building impactful campaigns through strategy, content, and data. I've gained experience supporting go-to-market initiatives, lead generation, and data-informed decision-making, and I'm eager to continue learning across all areas of marketing.",
+    summary: `I'm a marketing student focused on growth, content, and research-driven strategy, currently pursuing my B.S. in Business Marketing at San José State University. I most recently worked as a Growth Marketing Intern at Cohesity, where I tested LinkedIn lead-gen forms across financial-services campaigns, built a Copilot-based reporting automation, and ran creative audits across 150+ ads spanning three regional campaigns. Before that, I led Cohesity's intern visibility campaign as a Social Media Intern, driving 116K+ impressions and 34K+ engagements across five platforms, and managed 8 student consultants as Marketing Project Manager on a semester-long Cohesity engagement through the SJSU Marketing Association.
+
+I'm also a Research Assistant in Applied AI under Prof. Serkan Saka at SJSU, where I distill academic papers and industry reports from MIT, Wharton, Stanford, and other institutions into executive-ready thought leadership on agentic AI. Previously, I consulted for Tesla, surveying consumers and benchmarking their blog against Lucid and Rivian to shape a three-pillar content strategy.`,
     email: "jaisleen.nijjar@sjsu.edu",
   },
   experience: [
