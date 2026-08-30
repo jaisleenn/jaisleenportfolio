@@ -15,9 +15,9 @@ const {
 } = SITE_CONFIG;
 
 // Use Astro.site from astro.config.mjs for absolute URLs
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') || "https://jaisleenportfolio.vercel.app";
-const currentPageUrl = new URL(Astro.url.pathname, Astro.site).href;
-const blankImageUrl = new URL("/blank.png", Astro.site).href;
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://jaisleen.com";
+const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
+const blankImageUrl = "https://jaisleen.com/blank.png";
 ---
 
 <!doctype html>

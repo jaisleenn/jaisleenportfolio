@@ -16,7 +16,7 @@ export const SITE_CONFIG: SiteConfig = {
   
   ],
   socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  canonicalURL: "https://jaisleen.com",
 };
 
 export const SITE_CONTENT: SiteContent = {
