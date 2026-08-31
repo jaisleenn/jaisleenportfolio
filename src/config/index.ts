@@ -107,7 +107,7 @@ I'm also a Research Assistant in Applied AI under Prof. Serkan Saka at SJSU, whe
       name: "Applied AI Research",
       summary:
         "Distilled 15+ academic papers and industry reports from MIT, Wharton, Stanford, and other institutions into executive-ready thought leadership on agentic AI, covering governance, cybersecurity, and employee motivation, for a major cloud software company.",
-      image: "/blank.png",
+      image: "/applied-ai.jpg",
       isNdaRestricted: true,
     },
   ],
