@@ -90,12 +90,11 @@ I'm also a Research Assistant in Applied AI under Prof. Serkan Saka at SJSU, whe
   ],
   projects: [
     {
-      name: "Cohesity Intern Visibility Campaign",
-      summary: "Led LinkedIn campaigns reaching 104K+ followers with 34K+ engagements and 31K+ link clicks, driving significant growth in intern program visibility.",
-      linkPreview: "#cohesity-campaign",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/Linkedin.png",
-      campaignId: "cohesity-campaign",
+      name: "Applied AI Research",
+      summary:
+        "Distilled 15+ academic papers and industry reports from MIT, Wharton, Stanford, and other institutions into executive-ready thought leadership on agentic AI, covering governance, cybersecurity, and employee motivation, for a major cloud software company.",
+      image: "/applied-ai.jpg",
+      isNdaRestricted: true,
     },
     {
       name: "Tesla EV Charger Lead Generation",
@@ -104,11 +103,12 @@ I'm also a Research Assistant in Applied AI under Prof. Serkan Saka at SJSU, whe
       isNdaRestricted: true,
     },
     {
-      name: "Applied AI Research",
-      summary:
-        "Distilled 15+ academic papers and industry reports from MIT, Wharton, Stanford, and other institutions into executive-ready thought leadership on agentic AI, covering governance, cybersecurity, and employee motivation, for a major cloud software company.",
-      image: "/applied-ai.jpg",
-      isNdaRestricted: true,
+      name: "Cohesity Intern Visibility Campaign",
+      summary: "Led LinkedIn campaigns reaching 104K+ followers with 34K+ engagements and 31K+ link clicks, driving significant growth in intern program visibility.",
+      linkPreview: "#cohesity-campaign",
+      linkSource: "https://github.com/immois/astro-zen",
+      image: "/Linkedin.png",
+      campaignId: "cohesity-campaign",
     },
   ],
   about: {
