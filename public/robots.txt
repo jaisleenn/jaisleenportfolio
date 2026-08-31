@@ -1,0 +1,81 @@
+# Keep link-preview crawlers from using page photos as the share thumbnail.
+User-agent: Applebot
+Disallow: /applied-ai.jpg
+Disallow: /tesla.png
+Disallow: /Linkedin.png
+Disallow: /jaisleen-big.png
+Disallow: /jaisleen-small.png
+Disallow: /zen-og.png
+Disallow: /spotlight1.png
+Disallow: /raja.png
+Disallow: /shopify-clon.png
+Disallow: /spotifu.png
+Disallow: /blank.png
+
+User-agent: facebookexternalhit
+Disallow: /applied-ai.jpg
+Disallow: /tesla.png
+Disallow: /Linkedin.png
+Disallow: /jaisleen-big.png
+Disallow: /jaisleen-small.png
+Disallow: /zen-og.png
+Disallow: /spotlight1.png
+Disallow: /raja.png
+Disallow: /shopify-clon.png
+Disallow: /spotifu.png
+Disallow: /blank.png
+
+User-agent: Facebot
+Disallow: /applied-ai.jpg
+Disallow: /tesla.png
+Disallow: /Linkedin.png
+Disallow: /jaisleen-big.png
+Disallow: /jaisleen-small.png
+Disallow: /zen-og.png
+Disallow: /spotlight1.png
+Disallow: /raja.png
+Disallow: /shopify-clon.png
+Disallow: /spotifu.png
+Disallow: /blank.png
+
+User-agent: Twitterbot
+Disallow: /applied-ai.jpg
+Disallow: /tesla.png
+Disallow: /Linkedin.png
+Disallow: /jaisleen-big.png
+Disallow: /jaisleen-small.png
+Disallow: /zen-og.png
+Disallow: /spotlight1.png
+Disallow: /raja.png
+Disallow: /shopify-clon.png
+Disallow: /spotifu.png
+Disallow: /blank.png
+
+User-agent: LinkedInBot
+Disallow: /applied-ai.jpg
+Disallow: /tesla.png
+Disallow: /Linkedin.png
+Disallow: /jaisleen-big.png
+Disallow: /jaisleen-small.png
+Disallow: /zen-og.png
+Disallow: /spotlight1.png
+Disallow: /raja.png
+Disallow: /shopify-clon.png
+Disallow: /spotifu.png
+Disallow: /blank.png
+
+User-agent: WhatsApp
+Disallow: /applied-ai.jpg
+Disallow: /tesla.png
+Disallow: /Linkedin.png
+Disallow: /jaisleen-big.png
+Disallow: /jaisleen-small.png
+Disallow: /zen-og.png
+Disallow: /spotlight1.png
+Disallow: /raja.png
+Disallow: /shopify-clon.png
+Disallow: /spotifu.png
+Disallow: /blank.png
+
+User-agent: *
+Allow: /

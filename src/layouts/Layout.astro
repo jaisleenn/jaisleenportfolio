@@ -17,7 +17,6 @@ const {
 // Use Astro.site from astro.config.mjs for absolute URLs
 const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://jaisleen.com";
 const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
-const blankImageUrl = "https://jaisleen.com/blank.png";
 ---
 
 <!doctype html>
@@ -32,19 +31,17 @@ const blankImageUrl = "https://jaisleen.com/blank.png";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph: title/url only so shares stay text-only -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={currentPageUrl} />
-    <meta property="og:image" content={blankImageUrl} />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content={currentPageUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={blankImageUrl} />
   </head>
   <body class="bg-black font-sans text-white">
     <Header siteLogo={siteLogo} navLinks={navLinks} />
