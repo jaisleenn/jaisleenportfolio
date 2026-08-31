@@ -1,5 +1,7 @@
 ---
-const platforms: { name: string; tooltip?: string }[] = [
+type Skill = { name: string; tooltip?: string };
+
+const platforms: Skill[] = [
   {
     name: "LinkedIn Campaign Manager",
     tooltip: "Tested lead-gen forms across financial-services campaigns at Cohesity",
@@ -27,20 +29,20 @@ const platforms: { name: string; tooltip?: string }[] = [
   { name: "Jira" },
 ];
 
-const marketing = [
-  "Campaign Planning & Execution",
-  "A/B Testing",
-  "Marketing Funnel & Lifecycle Analysis",
-  "Competitive Research",
-  "Performance Dashboards & Reporting",
+const marketing: Skill[] = [
+  { name: "Campaign Planning & Execution" },
+  { name: "A/B Testing" },
+  { name: "Marketing Funnel & Lifecycle Analysis" },
+  { name: "Competitive Research" },
+  { name: "Performance Dashboards & Reporting" },
 ];
 
-const professional = ["Cross-Functional Collaboration"];
+const professional: Skill[] = [{ name: "Cross-Functional Collaboration" }];
 
-const groups = [
+const groups: { label: string; items: Skill[] }[] = [
   { label: "Platforms & Tools", items: platforms },
-  { label: "Marketing Skills", items: marketing.map((name) => ({ name })) },
-  { label: "Professional", items: professional.map((name) => ({ name })) },
+  { label: "Marketing Skills", items: marketing },
+  { label: "Professional", items: professional },
 ];
 
 const pillClass =
@@ -74,7 +76,7 @@ const pillClass =
                     id={`tip-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
                     role="tooltip"
                     data-skill-tip
-                    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-[min(16rem,calc(100vw-1.5rem))] rounded-lg border border-neutral/20 bg-white px-3 py-2 text-center text-xs leading-snug text-black opacity-0 shadow-sm transition-opacity duration-200 ease-out"
+                    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-64 rounded-lg border border-neutral/20 bg-white px-3 py-2 text-center text-xs leading-snug text-black opacity-0 shadow-sm transition-opacity duration-200 ease-out"
                   >
                     {item.tooltip}
                   </span>
