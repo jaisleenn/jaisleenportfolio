@@ -4,6 +4,7 @@ import Hero from "@components/Hero.astro";
 import Layout from "@layouts/Layout.astro";
 import Projects from "@components/Projects.astro";
 import CampaignDetails from "@components/CampaignDetails.astro";
+import Tools from "@components/Tools.astro";
 
 import "../styles/global.css";
 
@@ -135,32 +136,5 @@ const campaigns = [
   <Hero {...SITE_CONTENT.hero} />
   <Projects projects={SITE_CONTENT.projects} />
   <CampaignDetails campaigns={campaigns} />
-  
-  <!-- Tools Section -->
-  <section class="py-16">
-    <h2 class="mb-8 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">Tools & Skills</h2>
-    <div class="flex flex-wrap gap-3">
-      {[
-        "Sprout Social",
-        "Jira",
-        "HubSpot",
-        "Google Analytics",
-        "LinkedIn Sales Navigator",
-        "Canva",
-        "Excel",
-        "Google Workspace",
-        "Performance Dashboards & Reporting",
-        "A/B Testing Tools",
-        "Competitive Research Tools",
-        "AI-Assisted Research & Ideation",
-        "Cross-Functional Collaboration",
-        "Campaign Planning & Execution",
-        "Marketing Funnel & Lifecycle Analysis"
-      ].map((tool) => (
-        <span class="rounded-full border border-neutral/30 bg-neutral/10 px-4 py-2 text-sm text-white">
-          {tool}
-        </span>
-      ))}
-    </div>
-  </section>
+  <Tools />
 </Layout>

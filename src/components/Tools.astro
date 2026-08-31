@@ -1,0 +1,123 @@
+---
+const platforms: { name: string; tooltip?: string }[] = [
+  {
+    name: "LinkedIn Campaign Manager",
+    tooltip: "Tested lead-gen forms across financial-services campaigns at Cohesity",
+  },
+  {
+    name: "LinkedIn Sales Navigator",
+    tooltip: "Sourced 350+ qualified B2B leads for Tesla",
+  },
+  { name: "HubSpot" },
+  { name: "Sprout Social" },
+  {
+    name: "Semrush",
+    tooltip: "Benchmarked Tesla's blog against Lucid and Rivian",
+  },
+  { name: "Google Analytics" },
+  {
+    name: "Microsoft Copilot",
+    tooltip: "Built a reporting automation that cut a 45-min weekly task",
+  },
+  { name: "Claude" },
+  { name: "ChatGPT" },
+  { name: "Canva" },
+  { name: "Excel" },
+  { name: "Google Workspace" },
+  { name: "Jira" },
+];
+
+const marketing = [
+  "Campaign Planning & Execution",
+  "A/B Testing",
+  "Marketing Funnel & Lifecycle Analysis",
+  "Competitive Research",
+  "Performance Dashboards & Reporting",
+];
+
+const professional = ["Cross-Functional Collaboration"];
+
+const groups = [
+  { label: "Platforms & Tools", items: platforms },
+  { label: "Marketing Skills", items: marketing.map((name) => ({ name })) },
+  { label: "Professional", items: professional.map((name) => ({ name })) },
+];
+
+const pillClass =
+  "inline-block rounded-full border border-neutral/30 bg-neutral/10 px-4 py-2 text-sm text-white origin-center";
+---
+
+<section class="py-16">
+  <h2 class="mb-8 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">
+    Tools & Skills
+  </h2>
+
+  <div class="flex flex-col gap-8">
+    {
+      groups.map((group) => (
+        <div>
+          <h3 class="mb-3 font-serif text-sm font-medium tracking-wide text-primary">
+            {group.label}
+          </h3>
+          <div class="flex flex-wrap gap-3">
+            {group.items.map((item) =>
+              item.tooltip ? (
+                <span class="skill-tip relative inline-flex" data-skill-tooltip>
+                  <span
+                    class={`${pillClass} cursor-default transition-transform duration-200 ease-out hover:scale-105`}
+                    tabindex="0"
+                    aria-describedby={`tip-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
+                  >
+                    {item.name}
+                  </span>
+                  <span
+                    id={`tip-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
+                    role="tooltip"
+                    data-skill-tip
+                    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-[min(16rem,calc(100vw-1.5rem))] rounded-lg border border-neutral/20 bg-white px-3 py-2 text-center text-xs leading-snug text-black opacity-0 shadow-sm transition-opacity duration-200 ease-out"
+                  >
+                    {item.tooltip}
+                  </span>
+                </span>
+              ) : (
+                <span class={pillClass}>{item.name}</span>
+              ),
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <p class="mt-10 text-neutral italic">Site built with Cursor and deployed on Vercel.</p>
+</section>
+
+<script>
+  const showTip = (wrap: Element) => {
+    const tip = wrap.querySelector("[data-skill-tip]");
+    if (!(tip instanceof HTMLElement)) return;
+    tip.style.opacity = "1";
+    tip.style.transform = "translateX(-50%)";
+    const rect = tip.getBoundingClientRect();
+    const pad = 12;
+    let dx = 0;
+    if (rect.left < pad) dx = pad - rect.left;
+    if (rect.right > window.innerWidth - pad) {
+      dx = window.innerWidth - pad - rect.right;
+    }
+    tip.style.transform = `translateX(calc(-50% + ${dx}px))`;
+  };
+
+  const hideTip = (wrap: Element) => {
+    const tip = wrap.querySelector("[data-skill-tip]");
+    if (!(tip instanceof HTMLElement)) return;
+    tip.style.opacity = "0";
+  };
+
+  document.querySelectorAll("[data-skill-tooltip]").forEach((wrap) => {
+    wrap.addEventListener("mouseenter", () => showTip(wrap));
+    wrap.addEventListener("mouseleave", () => hideTip(wrap));
+    wrap.addEventListener("focusin", () => showTip(wrap));
+    wrap.addEventListener("focusout", () => hideTip(wrap));
+  });
+</script>
