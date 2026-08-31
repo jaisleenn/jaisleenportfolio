@@ -9,7 +9,6 @@ export const SITE_CONFIG: SiteConfig = {
   siteLogo: "/jaisleen-small.png",
   navLinks: [
     { text: "Projects", href: "#projects" },
-    { text: "About", href: "#about" },
   ],
   socialLinks: [
     { text: "LinkedIn", href: "https://linkedin.com/in/jaisleen-nijjar/" },
