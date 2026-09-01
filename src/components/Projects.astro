@@ -12,7 +12,7 @@ const { projects } = Astro.props;
 
 <Section text="Featured Projects" href="projects">
   {
-    projects.map(({ name, summary, image, linkPreview, linkSource, campaignId, isNdaRestricted }, index) => {
+    projects.map(({ name, summary, image, linkPreview, campaignId, isNdaRestricted }, index) => {
       const top = 98 + index * 40;
       const isInternalLink = linkPreview?.startsWith('#');
       return (
@@ -20,13 +20,13 @@ const { projects } = Astro.props;
           style={`top: ${top}px;`}
           class="sticky mb-8 overflow-hidden rounded-2xl border border-neutral/20 bg-black"
         >
-          <div class="relative z-[1] grid h-[17.5rem] w-full grid-rows-2 rounded-2xl bg-black sm:grid-cols-2 sm:grid-rows-1 sm:h-[15.5rem]">
-            <div class="flex min-h-0 flex-col justify-center overflow-hidden px-5 py-5 sm:px-6">
-              <h3 class="mb-2 font-serif text-xl font-medium text-primary md:text-2xl">
+          <div class="relative z-[1] grid h-[20rem] w-full grid-cols-2 rounded-2xl bg-black">
+            <div class="flex min-h-0 flex-col justify-center overflow-hidden px-6 py-6">
+              <h3 class="mb-3 font-serif text-2xl font-medium text-primary md:text-3xl">
                 {name}
               </h3>
-              <p class="text-sm leading-snug text-white md:text-base">{summary}</p>
-              <div class="flex gap-5 pt-4 text-sm text-primary">
+              <p class="text-sm text-white md:text-base">{summary}</p>
+              <div class="flex gap-5 pt-5 text-primary">
                 {isNdaRestricted ? (
                   <span class="text-neutral italic">NDA-restricted work</span>
                 ) : (
@@ -40,9 +40,9 @@ const { projects } = Astro.props;
                 )}
               </div>
             </div>
-            <div class="min-h-0 overflow-hidden">
+            <div class="relative min-h-0 overflow-hidden">
               <Image
-                class="h-full w-full rounded-ss-xl rounded-ee-2xl object-cover object-center"
+                class="absolute inset-0 h-full w-full rounded-ss-xl rounded-ee-2xl object-cover object-center"
                 src={image}
                 alt={name}
                 width="736"
