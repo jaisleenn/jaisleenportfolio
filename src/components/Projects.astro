@@ -18,15 +18,15 @@ const { projects } = Astro.props;
       return (
         <div
           style={`top: ${top}px;`}
-          class="sticky mb-8 rounded-2xl border border-neutral/20 bg-black"
+          class="sticky mb-8 overflow-hidden rounded-2xl border border-neutral/20 bg-black"
         >
-          <div class="relative z-[1] grid w-full grid-rows-[auto_auto] rounded-2xl bg-black sm:grid-cols-2 sm:grid-rows-1 sm:items-stretch">
-            <div class="flex flex-col justify-center px-6 py-6">
-              <h3 class="mb-3 font-serif text-2xl font-medium text-primary md:text-3xl">
+          <div class="relative z-[1] grid h-[17.5rem] w-full grid-rows-2 rounded-2xl bg-black sm:grid-cols-2 sm:grid-rows-1 sm:h-[15.5rem]">
+            <div class="flex min-h-0 flex-col justify-center overflow-hidden px-5 py-5 sm:px-6">
+              <h3 class="mb-2 font-serif text-xl font-medium text-primary md:text-2xl">
                 {name}
               </h3>
-              <p class="text-sm text-white md:text-base">{summary}</p>
-              <div class="flex gap-5 pt-5 text-primary">
+              <p class="text-sm leading-snug text-white md:text-base">{summary}</p>
+              <div class="flex gap-5 pt-4 text-sm text-primary">
                 {isNdaRestricted ? (
                   <span class="text-neutral italic">NDA-restricted work</span>
                 ) : (
@@ -40,9 +40,9 @@ const { projects } = Astro.props;
                 )}
               </div>
             </div>
-            <div class="flex min-h-36 items-end overflow-hidden sm:min-h-0">
+            <div class="min-h-0 overflow-hidden">
               <Image
-                class="h-36 w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-full sm:min-h-[11.5rem] sm:w-full"
+                class="h-full w-full rounded-ss-xl rounded-ee-2xl object-cover object-center"
                 src={image}
                 alt={name}
                 width="736"
