@@ -2,7 +2,6 @@
 import Header from "@components/Header.astro";
 import "@fontsource/forum";
 import { SITE_CONFIG } from "@config";
-import Footer from "@components/Footer.astro";
 
 const {
   title,
@@ -10,8 +9,6 @@ const {
   siteLogo,
   navLinks,
   lang,
-  author,
-  socialLinks,
 } = SITE_CONFIG;
 
 interface Props {
@@ -55,6 +52,5 @@ const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
     <main class="mx-auto max-w-3xl px-5">
       <slot />
     </main>
-    <Footer author={author} socialLinks={socialLinks} />
   </body>
 </html>

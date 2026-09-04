@@ -10,10 +10,7 @@ export const SITE_CONFIG: SiteConfig = {
   navLinks: [
     { text: "Campaigns", href: "/cohesity-campaign" },
   ],
-  socialLinks: [
-    { text: "LinkedIn", href: "https://linkedin.com/in/jaisleen-nijjar/" },
-  
-  ],
+  socialLinks: [],
   socialImage: "/zen-og.png",
   canonicalURL: "https://jaisleen.com",
 };

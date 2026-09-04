@@ -3,7 +3,6 @@ import { SITE_CONTENT } from "@config";
 import Hero from "@components/Hero.astro";
 import Layout from "@layouts/Layout.astro";
 import Projects from "@components/Projects.astro";
-import Tools from "@components/Tools.astro";
 
 import "../styles/global.css";
 ---
@@ -11,5 +10,4 @@ import "../styles/global.css";
 <Layout>
   <Hero {...SITE_CONTENT.hero} />
   <Projects projects={SITE_CONTENT.projects} />
-  <Tools />
 </Layout>
