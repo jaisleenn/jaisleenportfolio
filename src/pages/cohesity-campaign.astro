@@ -6,7 +6,7 @@ const featured = [
   {
     title: "Intern Spotlight Series",
     caption:
-      "Originally planned as a video series, but with a tight timeline and visibility KPIs to hit, I shifted the format to carousels — keeping the storytelling intact while staying on pace.",
+      "Originally planned as a video series, but with a tight timeline and visibility KPIs to hit, I shifted the format to carousels, keeping the storytelling intact while staying on pace.",
     image: "/spotlight1.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_intern-spotlight-shreya-aiyer-activity-7364677300098891776-ejHq/",
@@ -14,7 +14,7 @@ const featured = [
   {
     title: "International Friendship Day",
     caption:
-      "Partners rarely get spotlighted after launch. I used Friendship Day to resurface old partner content and re-engage them — turning a forgotten relationship into a moment worth celebrating.",
+      "Partners rarely get spotlighted after launch. I used Friendship Day to resurface old partner content and re-engage them, turning a forgotten relationship into a moment worth celebrating.",
     image: "/culture2.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_internationalfriendshipday-wearecohesity-activity-7356425140747845633-YT8Z/",
@@ -22,52 +22,52 @@ const featured = [
   {
     title: "Intern Summer Recap",
     caption:
-      "Coordinated on-camera interviews with the full intern cohort, then edited and sequenced their answers into a single recap video — giving every intern a moment on screen.",
+      "Coordinated on-camera interviews with the full intern cohort, then edited and sequenced their answers into a single recap video, giving every intern a moment on screen.",
     image: "/highlight4.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_wearecohesity-lifeatcohesity-cohesitynextgen-activity-7361748085942726657-MAtq/",
   },
 ];
 
-const moreSpotlights = [
+const moreFromCampaign = [
   {
+    title: "Intern Spotlight: Kalyani Chitre",
     image: "/spotlight2.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_intern-spotlight-kalyani-chitre-activity-7362166224253833216-xINm",
   },
   {
+    title: "Intern Spotlight: Matthew Mechlowitz",
     image: "/spotlight3.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_intern-spotlight-matthew-mechlowitz-activity-7359252085072146433-IAkP/",
   },
   {
+    title: "Intern Spotlight: Jaisleen Nijjar",
     image: "/spotlight4.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_jaisleen-nijjars-intern-spotlight-activity-7356783222304714752-QqZG/",
   },
-];
-
-const dayInTheLife = [
   {
+    title: "Day in the Life",
     image: "/dil1.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_cohesitynextgen-wearecohesity-cohesityintern-activity-7350963672535478273-4Ljz",
     imagePosition: "object-top",
   },
   {
+    title: "Day in the Life",
     image: "/dil2.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_lifeatcohesity-cohesitycareers-dayinthelife-activity-7361076726598152192-QB2S",
     imagePosition: "object-top",
   },
   {
+    title: "Day in the Life",
     image: "/dil3.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_cohesitynextgen-wearecohesity-cohesityintern-activity-7358508760782286850-ZOhp",
   },
-];
-
-const moreStatic = [
   {
     title: "System Admin Day",
     image: "/highlight1.png",
@@ -132,42 +132,16 @@ const moreStatic = [
     <section class="mt-20 border-t border-neutral/15 pt-16">
       <h2 class="type-heading mb-10">More from the campaign</h2>
 
-      <h3 class="type-heading mb-4">Intern Spotlight Series</h3>
-      <div class="mb-12 grid grid-cols-3 gap-4">
-        {
-          moreSpotlights.map((post) => (
-            <a href={post.linkedInUrl} target="_blank" rel="noopener noreferrer">
-              <div class="aspect-[4/5] overflow-hidden rounded-xl">
-                <img src={post.image} alt="Intern spotlight" class="h-full w-full object-cover" />
-              </div>
-            </a>
-          ))
-        }
-      </div>
-
-      <h3 class="type-heading mb-4">Day in the Life Series</h3>
-      <div class="mb-12 grid grid-cols-3 gap-4">
-        {
-          dayInTheLife.map((post) => (
-            <a href={post.linkedInUrl} target="_blank" rel="noopener noreferrer">
-              <div class="aspect-[9/16] overflow-hidden rounded-xl">
-                <img
-                  src={post.image}
-                  alt="Day in the Life post"
-                  class:list={["h-full w-full object-cover", post.imagePosition ?? "object-center"]}
-                />
-              </div>
-            </a>
-          ))
-        }
-      </div>
-
       <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {
-          moreStatic.map((post) => (
+          moreFromCampaign.map((post) => (
             <a href={post.linkedInUrl} target="_blank" rel="noopener noreferrer" class="flex flex-col">
               <div class="aspect-[4/5] overflow-hidden rounded-xl">
-                <img src={post.image} alt={post.title} class="h-full w-full object-cover object-top" />
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class:list={["h-full w-full object-cover", post.imagePosition ?? "object-top"]}
+                />
               </div>
               <span class="type-body mt-3 text-white">{post.title}</span>
             </a>
