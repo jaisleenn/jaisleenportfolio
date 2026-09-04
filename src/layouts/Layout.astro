@@ -5,7 +5,6 @@ import { SITE_CONFIG } from "@config";
 import "../styles/global.css";
 
 const {
-  title,
   description,
   siteLogo,
   navLinks,
@@ -17,12 +16,10 @@ interface Props {
   pageTitle?: string;
 }
 
-const { pageTitle } = Astro.props;
-const documentTitle = pageTitle ?? title;
-
 // Use Astro.site from astro.config.mjs for absolute URLs
 const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://jaisleen.com";
 const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
+const shareTitle = currentPageUrl.replace(/^https:\/\//, "").replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -35,19 +32,12 @@ const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
     <link rel="icon" type="image/png" href="/jaisleen-small.png" />
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
-    <title>{documentTitle}</title>
+    <title>{shareTitle}</title>
 
-    <!-- Open Graph: title/url only so shares stay text-only -->
+    <!-- Shares show the URL, not the page title -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={documentTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={shareTitle} />
     <meta property="og:url" content={currentPageUrl} />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content={currentPageUrl} />
-    <meta name="twitter:title" content={documentTitle} />
-    <meta name="twitter:description" content={description} />
   </head>
   <body class="type-body bg-black text-white">
     <Header siteLogo={siteLogo} navLinks={navLinks} />
