@@ -37,16 +37,16 @@ const { campaigns } = Astro.props;
 {
   campaigns.map((campaign) => (
     <section id={campaign.id} class="scroll-mt-20 border-t border-neutral/15 pt-20 pb-10 md:pt-24 md:pb-12">
-      <h2 class="mb-14 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">
+      <h2 class="type-hero mb-14">
         {campaign.name}
       </h2>
 
       {campaign.pillars.filter(pillar => pillar.posts && pillar.posts.length > 0).map((pillar, index) => (
         <div class:list={[index === 0 ? "" : "mt-16 border-t border-neutral/15 pt-16"]}>
-          <h3 class="mb-4 font-serif text-2xl font-semibold text-white md:text-3xl">
+          <h3 class="type-heading mb-4">
             {pillar.title}
           </h3>
-          <p class="mb-8 max-w-2xl text-base text-neutral">{pillar.description}</p>
+          <p class="type-body mb-8 max-w-2xl text-white">{pillar.description}</p>
 
           <div class={pillar.layoutClass || "grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"}>
             {pillar.posts?.map((post) => (
@@ -54,10 +54,10 @@ const { campaigns } = Astro.props;
                 {(post.title || post.description) && (
                   <div class="mb-4">
                     {post.title && (
-                      <h4 class="mb-2 font-serif text-xl font-bold text-white">{post.title}</h4>
+                      <h4 class="type-heading mb-2">{post.title}</h4>
                     )}
                     {post.description && (
-                      <p class="text-sm text-neutral">{post.description}</p>
+                      <p class="type-body text-white">{post.description}</p>
                     )}
                   </div>
                 )}
@@ -72,7 +72,7 @@ const { campaigns } = Astro.props;
                   href={post.linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="mt-4 text-sm text-primary hover:underline"
+                  class="type-body mt-4 text-primary hover:underline"
                 >
                   {pillar.linkText || "View post on LinkedIn ↗"}
                 </a>

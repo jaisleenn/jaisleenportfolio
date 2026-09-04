@@ -4,41 +4,23 @@
   --font-sans: "Time", system-ui, sans-serif;
   --font-serif: "Gabarito Variable", ui-serif, serif;
 
-  --color-primary: #6D8196;
-  --color-neutral: #6B6B6B;
-  --color-white: #4A4A4A;
+  --color-primary: #6d8196;
+  --color-neutral: #6b6b6b;
+  --color-white: #4a4a4a;
   --color-black: #f4f3ef;
 
-  --text-xs: 0.75rem;
-  --text-xs--line-height: 1rem;
-  --text-sm: 0.875rem;
-  --text-sm--line-height: 1.25rem;
-  --text-base: 0.9375rem;
-  --text-base--line-height: 1.375rem;
-  --text-lg: 1.0625rem;
-  --text-lg--line-height: 1.5rem;
-  --text-xl: 1.25rem;
-  --text-xl--line-height: 1.5rem;
-  --text-2xl: 1.5rem;
-  --text-2xl--line-height: 1.875rem;
-  --text-3xl: 1.75rem;
-  --text-3xl--line-height: 2.125rem;
-  --text-4xl: 1.875rem;
-  --text-4xl--line-height: 2.25rem;
-  --text-5xl: 2.125rem;
-  --text-5xl--line-height: 2.5rem;
-  --text-6xl: 2.5rem;
-  --text-6xl--line-height: 3rem;
-  --text-7xl: 3.25rem;
-  --text-7xl--line-height: 1;
-  --text-8xl: 3.875rem;
-  --text-8xl--line-height: 4.25rem;
-  --text-9xl: 5rem;
-  --text-9xl--line-height: 5.5rem;
+  --text-*: initial;
+  --text-hero: 2.125rem;
+  --text-hero--line-height: 2.5rem;
+  --text-heading: 1.5rem;
+  --text-heading--line-height: 1.875rem;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.5rem;
 
-  --tracking-tightest: -2px;
-  --tracking-tighter: -1px;
-  --tracking-tight: -0.25px;
+  --font-weight-*: initial;
+  --font-weight-hero: 700;
+  --font-weight-heading: 500;
+  --font-weight-body: 400;
 
   --animate-slide-in: slide-in 600ms ease both;
 
@@ -49,5 +31,30 @@
     100% {
       transform: translateY(0);
     }
+  }
+}
+
+@layer components {
+  .type-hero {
+    font-family: var(--font-serif);
+    font-size: var(--text-hero);
+    line-height: var(--text-hero--line-height);
+    font-weight: var(--font-weight-hero);
+    color: var(--color-primary);
+  }
+
+  .type-heading {
+    font-family: var(--font-serif);
+    font-size: var(--text-heading);
+    line-height: var(--text-heading--line-height);
+    font-weight: var(--font-weight-heading);
+    color: var(--color-primary);
+  }
+
+  .type-body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-weight: var(--font-weight-body);
   }
 }

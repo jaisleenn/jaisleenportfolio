@@ -45,11 +45,11 @@ const groups: { label: string; items: Skill[] }[] = [
   { label: "Professional", items: professional },
 ];
 
-const skillClass = "text-sm text-white";
+const skillClass = "type-body text-white";
 ---
 
 <section class="border-t border-neutral/15 pt-20 pb-10 md:pt-24 md:pb-12">
-  <h2 class="mb-14 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">
+  <h2 class="type-hero mb-14">
     Tools & Skills
   </h2>
 
@@ -57,7 +57,7 @@ const skillClass = "text-sm text-white";
     {
       groups.map((group) => (
         <div>
-          <h3 class="mb-3 text-sm font-medium tracking-wide text-primary">
+          <h3 class="type-heading mb-3">
             {group.label}
           </h3>
           <div class="flex flex-wrap gap-x-5 gap-y-2">
@@ -75,7 +75,7 @@ const skillClass = "text-sm text-white";
                     id={`tip-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
                     role="tooltip"
                     data-skill-tip
-                    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-64 py-2 text-center text-xs leading-snug text-neutral opacity-0 transition-opacity duration-200 ease-out"
+                    class="type-body pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-64 py-2 text-center text-neutral opacity-0 transition-opacity duration-200 ease-out"
                   >
                     {item.tooltip}
                   </span>
@@ -90,7 +90,7 @@ const skillClass = "text-sm text-white";
     }
   </div>
 
-  <p class="mt-10 text-neutral italic">Site built with Cursor and deployed on Vercel.</p>
+  <p class="type-body mt-10 italic text-neutral">Site built with Cursor and deployed on Vercel.</p>
 </section>
 
 <script>

@@ -28,18 +28,18 @@ const { projects } = Astro.props;
                 />
               </div>
               <div class="flex flex-1 flex-col pt-5">
-                <h3 class="mb-2 font-serif text-xl font-medium text-primary md:text-2xl">
+                <h3 class="type-heading mb-2">
                   {name}
                 </h3>
-                <p class="flex-1 text-sm leading-snug text-white">{summary}</p>
-                <div class="pt-4 text-sm text-primary">
+                <p class="type-body flex-1 text-white">{summary}</p>
+                <div class="pt-4">
                   {isNdaRestricted ? (
-                    <span class="text-neutral italic">NDA-restricted work</span>
+                    <span class="type-body italic text-neutral">NDA-restricted work</span>
                   ) : (
                     <a
                       href={linkPreview}
                       target={isInternalLink ? undefined : "_blank"}
-                      class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
+                      class="type-body text-primary after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
                     >
                       {campaignId ? "View Campaign" : "Preview"}
                     </a>
