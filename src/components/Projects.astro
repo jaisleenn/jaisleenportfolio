@@ -18,7 +18,7 @@ const { projects } = Astro.props;
           const isInternalLink = linkPreview?.startsWith("#");
           return (
             <div class="flex min-h-0 flex-col">
-              <div class="relative h-44 w-full overflow-hidden rounded-xl">
+              <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
                 <Image
                   class="absolute inset-0 h-full w-full object-cover object-center"
                   src={image}
