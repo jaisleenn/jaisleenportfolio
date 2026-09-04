@@ -8,7 +8,7 @@ export const SITE_CONFIG: SiteConfig = {
   lang: "en",
   siteLogo: "/jaisleen-small.png",
   navLinks: [
-    { text: "Projects", href: "/#projects" },
+    { text: "Campaigns", href: "/cohesity-campaign" },
   ],
   socialLinks: [
     { text: "LinkedIn", href: "https://linkedin.com/in/jaisleen-nijjar/" },

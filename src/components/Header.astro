@@ -64,6 +64,17 @@ const { siteLogo, navLinks } = Astro.props;
     button?.setAttribute("aria-expanded", `${!isHidden}`);
   };
 
+  const markActiveNav = () => {
+    const path = window.location.pathname.replace(/\/$/, "") || "/";
+    navItems.forEach((item) => {
+      const href = item.getAttribute("href") ?? "";
+      const hrefPath = href.split("#")[0];
+      if (hrefPath && hrefPath === path) {
+        item.classList.add("text-primary", "md:after:opacity-100");
+      }
+    });
+  };
+  markActiveNav();
   button?.addEventListener("click", toggleMenu);
   navItems.forEach((item) => {
     item?.addEventListener("click", toggleMenu);
@@ -75,7 +86,10 @@ const { siteLogo, navLinks } = Astro.props;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}` || item.getAttribute("href") === `/#${entry.target.id}`) {
+            const href = item.getAttribute("href") ?? "";
+            const isHashNav = href.startsWith("#") || href.startsWith("/#");
+            if (!isHashNav) return;
+            if (href === `#${entry.target.id}` || href === `/#${entry.target.id}`) {
               item.classList.add("text-primary", "md:after:opacity-100");
             } else {
               item.classList.remove("text-primary", "md:after:opacity-100");
