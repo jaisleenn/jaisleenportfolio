@@ -114,7 +114,7 @@ const moreFromCampaign = [
         featured.map((piece) => (
           <section class="flex min-w-0 flex-col">
             <h2 class="type-heading mb-3">{piece.title}</h2>
-            <p class="type-body mb-4 text-white">{piece.caption}</p>
+            <p class="type-body mb-4 text-ink">{piece.caption}</p>
             <a href={piece.linkedInUrl} target="_blank" rel="noopener noreferrer" class="mt-auto block">
               <div class="aspect-[4/5] overflow-hidden rounded-xl">
                 <img
@@ -143,7 +143,7 @@ const moreFromCampaign = [
                   class:list={["h-full w-full object-cover", post.imagePosition ?? "object-top"]}
                 />
               </div>
-              <span class="type-body mt-3 text-white">{post.title}</span>
+              <span class="type-body mt-3 text-ink">{post.title}</span>
             </a>
           ))
         }
