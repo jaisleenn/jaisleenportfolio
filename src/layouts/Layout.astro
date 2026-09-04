@@ -14,6 +14,13 @@ const {
   socialLinks,
 } = SITE_CONFIG;
 
+interface Props {
+  pageTitle?: string;
+}
+
+const { pageTitle } = Astro.props;
+const documentTitle = pageTitle ?? title;
+
 // Use Astro.site from astro.config.mjs for absolute URLs
 const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://jaisleen.com";
 const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
@@ -29,18 +36,18 @@ const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
     <link rel="icon" type="image/png" href="/jaisleen-small.png" />
     <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{documentTitle}</title>
 
     <!-- Open Graph: title/url only so shares stay text-only -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={documentTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={currentPageUrl} />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content={currentPageUrl} />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={documentTitle} />
     <meta name="twitter:description" content={description} />
   </head>
   <body class="type-body bg-black text-white">

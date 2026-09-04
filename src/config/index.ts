@@ -8,7 +8,7 @@ export const SITE_CONFIG: SiteConfig = {
   lang: "en",
   siteLogo: "/jaisleen-small.png",
   navLinks: [
-    { text: "Projects", href: "#projects" },
+    { text: "Projects", href: "/#projects" },
   ],
   socialLinks: [
     { text: "LinkedIn", href: "https://linkedin.com/in/jaisleen-nijjar/" },
@@ -104,7 +104,7 @@ I'm also a Research Assistant in Applied AI under Prof. Serkan Saka at SJSU, whe
     {
       name: "Cohesity Intern Visibility Campaign",
       summary: "Led LinkedIn campaigns reaching 104K+ followers with 34K+ engagements and 31K+ link clicks, driving significant growth in intern program visibility.",
-      linkPreview: "#cohesity-campaign",
+      linkPreview: "/cohesity-campaign",
       linkSource: "https://github.com/immois/astro-zen",
       image: "/Linkedin.png",
       campaignId: "cohesity-campaign",

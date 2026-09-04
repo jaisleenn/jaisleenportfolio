@@ -1,5 +1,4 @@
 ---
-import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
 
@@ -10,46 +9,57 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<Section text="Featured Projects" href="projects">
-  <div class="relative left-1/2 w-[min(72rem,calc(100vw-2.5rem))] -translate-x-1/2">
-    <div class="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
-      {
-        projects.map(({ name, summary, image, linkPreview, campaignId, isNdaRestricted }) => {
-          const isInternalLink = linkPreview?.startsWith("#");
-          return (
-            <div class="flex min-h-0 flex-col">
-              <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
-                <Image
-                  class="absolute inset-0 h-full w-full object-cover object-center"
-                  src={image}
-                  alt={name}
-                  width="736"
-                  height="483"
-                />
-              </div>
-              <div class="flex flex-1 flex-col pt-5">
-                <h3 class="type-heading mb-2">
-                  {name}
-                </h3>
-                <p class="type-body flex-1 text-white">{summary}</p>
-                <div class="pt-4">
-                  {isNdaRestricted ? (
-                    <span class="type-body italic text-neutral">NDA-restricted work</span>
-                  ) : (
-                    <a
-                      href={linkPreview}
-                      target={isInternalLink ? undefined : "_blank"}
-                      class="type-body text-primary after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                    >
-                      {campaignId ? "View Campaign" : "Preview"}
-                    </a>
-                  )}
+<section id="projects" class="border-t border-neutral/15 pt-20 pb-10 md:pt-24 md:pb-12">
+  <div class="relative left-1/2 w-screen -translate-x-1/2">
+    <div class="mx-auto w-[min(72rem,calc(100vw-2.5rem))]">
+      <h2 class="type-hero mb-14">
+        Featured Projects
+      </h2>
+      <div class="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
+        {
+          projects.map(({ name, summary, image, linkPreview, campaignId, isNdaRestricted }) => {
+            const isInternalLink = Boolean(
+              linkPreview && !linkPreview.startsWith("http"),
+            );
+            return (
+              <div class="flex min-h-0 flex-col">
+                <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+                  <Image
+                    class="absolute inset-0 h-full w-full object-cover object-center"
+                    src={image}
+                    alt={name}
+                    width="736"
+                    height="483"
+                  />
+                </div>
+                <div class="flex flex-1 flex-col pt-5">
+                  <h3 class="type-heading mb-2">
+                    {name}
+                  </h3>
+                  <p class="type-body flex-1 text-white">{summary}</p>
+                  <div class="pt-4">
+                    {isNdaRestricted ? (
+                      <span class="type-body italic text-neutral">NDA-restricted work</span>
+                    ) : (
+                      <a
+                        href={linkPreview}
+                        target={isInternalLink ? undefined : "_blank"}
+                        class:list={[
+                        "type-body text-primary hover:underline",
+                        !isInternalLink &&
+                          "after:relative after:bottom-[-5px] after:content-[url(/external.svg)]",
+                      ]}
+                      >
+                        {campaignId ? "View Campaign" : "Preview"}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })
-      }
+            );
+          })
+        }
+      </div>
     </div>
   </div>
-</Section>
+</section>
