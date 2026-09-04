@@ -8,9 +8,8 @@ type Props = HeaderProps;
 const { siteLogo, navLinks } = Astro.props;
 ---
 
-<header
-  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between bg-black px-5 py-6 backdrop-blur-sm bg-black/80"
->
+<header class="sticky top-0 z-50 animate-slide-in bg-black/80 backdrop-blur-sm">
+  <div class="page-wrap flex justify-between py-6">
   <a href="/" aria-label="Home link">
     <Image
       class="rounded-full"
@@ -48,8 +47,9 @@ const { siteLogo, navLinks } = Astro.props;
           </li>
         ))
       }
-    </ul>
-  </nav>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <script>

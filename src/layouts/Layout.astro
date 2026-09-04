@@ -45,7 +45,7 @@ const currentPageUrl = new URL(Astro.url.pathname, `${siteUrl}/`).href;
   </head>
   <body class="type-body bg-black text-white">
     <Header siteLogo={siteLogo} navLinks={navLinks} />
-    <main class="mx-auto max-w-3xl px-5">
+    <main class="page-wrap">
       <slot />
     </main>
     <Footer author={author} socialLinks={socialLinks} />
