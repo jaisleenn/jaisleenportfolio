@@ -109,7 +109,7 @@ const moreFromCampaign = [
 
     <h1 class="type-hero mb-14">Cohesity Intern Visibility Campaign</h1>
 
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-6">
+    <div class="grid grid-cols-3 gap-3 md:gap-6">
       {
         featured.map((piece) => (
           <section class="flex min-w-0 flex-col">
@@ -135,7 +135,7 @@ const moreFromCampaign = [
       <div class="grid grid-cols-3 gap-4 lg:grid-cols-4">
         {
           moreFromCampaign.map((post) => (
-            <a href={post.linkedInUrl} target="_blank" rel="noopener noreferrer" class="flex flex-col">
+            <a href={post.linkedInUrl} target="_blank" rel="noopener noreferrer" class="flex min-w-0 flex-col">
               <div class="aspect-[4/5] overflow-hidden rounded-xl">
                 <img
                   src={post.image}

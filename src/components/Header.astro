@@ -1,5 +1,4 @@
 ---
-import Menu from "@icons/Menu.astro";
 import { Image } from "astro:assets";
 import type { HeaderProps } from "@types";
 
@@ -21,21 +20,8 @@ const { siteLogo, navLinks } = Astro.props;
     />
   </a>
 
-  <button
-    type="button"
-    id="menu-button"
-    class="px-1.5 text-neutral sm:hidden"
-    aria-expanded="false"
-    aria-controls="main-menu"
-  >
-    <Menu />
-  </button>
-
-  <nav
-    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
-    id="main-menu"
-  >
-    <ul class="gap-2 sm:flex">
+  <nav class="text-neutral" id="main-menu">
+    <ul class="flex gap-2">
       {
         navLinks.map((link) => (
           <li class="relative">
@@ -53,16 +39,7 @@ const { siteLogo, navLinks } = Astro.props;
 </header>
 
 <script>
-  // Toggle mobile menu
-  const button = document.querySelector("#menu-button");
-  const menu = document.querySelector("#main-menu");
   const navItems = document.querySelectorAll("#main-menu > ul > li > a");
-
-  const toggleMenu = () => {
-    menu?.classList.toggle("hidden");
-    const isHidden = menu?.classList.contains("hidden");
-    button?.setAttribute("aria-expanded", `${!isHidden}`);
-  };
 
   const markActiveNav = () => {
     const path = window.location.pathname.replace(/\/$/, "") || "/";
@@ -75,10 +52,6 @@ const { siteLogo, navLinks } = Astro.props;
     });
   };
   markActiveNav();
-  button?.addEventListener("click", toggleMenu);
-  navItems.forEach((item) => {
-    item?.addEventListener("click", toggleMenu);
-  });
 
   // Update navigation based on scroll position with Intersection Observer
   const observer = new IntersectionObserver(

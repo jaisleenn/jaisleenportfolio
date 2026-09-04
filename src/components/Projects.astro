@@ -15,14 +15,14 @@ const { projects } = Astro.props;
       <h2 class="type-hero mb-14">
         Featured Projects
       </h2>
-      <div class="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
+      <div class="grid grid-cols-3 gap-3 md:gap-10">
         {
           projects.map(({ name, summary, image, linkPreview, campaignId, isNdaRestricted }) => {
             const isInternalLink = Boolean(
               linkPreview && !linkPreview.startsWith("http"),
             );
             return (
-              <div class="flex min-h-0 flex-col">
+              <div class="flex min-h-0 min-w-0 flex-col">
                 <div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
                   <Image
                     class="absolute inset-0 h-full w-full object-cover object-center"
