@@ -108,13 +108,18 @@ const moreFromCampaign = [
 
     <h1 class="type-hero mb-10 md:mb-14">Cohesity Intern Visibility Campaign</h1>
 
-    <div class="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-6">
+    <div class="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-6">
       {
         featured.map((piece) => (
-          <section class="flex min-w-0 flex-col">
-            <h2 class="type-heading mb-3">{piece.title}</h2>
-            <p class="type-body mb-4 text-ink">{piece.caption}</p>
-            <a href={piece.linkedInUrl} target="_blank" rel="noopener noreferrer" class="mt-auto block">
+          <section class="grid min-w-0 grid-cols-[7.5rem_minmax(0,1fr)] items-start gap-x-4 gap-y-2 sm:flex sm:flex-col sm:gap-0">
+            <h2 class="type-heading col-span-2 sm:mb-3">{piece.title}</h2>
+            <p class="type-body col-start-2 row-start-2 text-ink sm:mb-4">{piece.caption}</p>
+            <a
+              href={piece.linkedInUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="col-start-1 row-start-2 block sm:mt-auto"
+            >
               <div class="aspect-[4/5] overflow-hidden rounded-xl">
                 <img
                   src={piece.image}
