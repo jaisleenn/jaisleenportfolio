@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+:root {
+  --page-pad: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-pad: 1.25rem;
+  }
+}
+
 @theme {
   --font-sans: "Time", system-ui, sans-serif;
   --font-serif: "Gabarito Variable", ui-serif, serif;
@@ -57,5 +67,17 @@
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
     font-weight: var(--font-weight-body);
+  }
+}
+
+@media (max-width: 639px) {
+  .type-hero {
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+
+  .type-heading {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
   }
 }

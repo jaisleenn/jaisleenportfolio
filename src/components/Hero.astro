@@ -6,10 +6,10 @@ type Props = HeroProps;
 const { name, summary, email } = Astro.props;
 ---
 
-<section class="pt-4 pb-12 md:pb-16" id="#hero">
-  <div class="relative left-1/2 w-[min(72rem,calc(100vw-2.5rem))] -translate-x-1/2">
-    <div class="flex flex-row items-start gap-4 md:gap-10">
-      <div class="relative aspect-[3/4] w-28 shrink-0 overflow-hidden rounded-xl sm:w-40 md:w-64 lg:w-72">
+<section class="pt-8 pb-12 sm:pt-4 md:pb-16" id="#hero">
+  <div class="relative left-1/2 w-[min(72rem,calc(100vw-2*var(--page-pad)))] -translate-x-1/2">
+    <div class="flex flex-col items-start gap-6 md:flex-row md:gap-10">
+      <div class="relative aspect-[3/4] w-40 shrink-0 overflow-hidden rounded-xl sm:w-48 md:w-64 lg:w-72">
         <Image
           class="absolute inset-0 h-full w-full object-cover object-top"
           src="/jaisleen-headshot.jpg"
