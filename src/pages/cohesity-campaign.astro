@@ -10,7 +10,6 @@ const featured = [
     image: "/spotlight1.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_intern-spotlight-shreya-aiyer-activity-7364677300098891776-ejHq/",
-    aspect: "aspect-[4/5]",
   },
   {
     title: "International Friendship Day",
@@ -19,7 +18,6 @@ const featured = [
     image: "/culture2.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_internationalfriendshipday-wearecohesity-activity-7356425140747845633-YT8Z/",
-    aspect: "aspect-auto",
   },
   {
     title: "Intern Summer Recap",
@@ -28,7 +26,6 @@ const featured = [
     image: "/highlight4.png",
     linkedInUrl:
       "https://www.linkedin.com/posts/cohesity_wearecohesity-lifeatcohesity-cohesitynextgen-activity-7361748085942726657-MAtq/",
-    aspect: "aspect-auto",
   },
 ];
 
@@ -112,21 +109,18 @@ const moreStatic = [
 
     <h1 class="type-hero mb-14">Cohesity Intern Visibility Campaign</h1>
 
-    <div class="flex flex-col gap-16">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-6">
       {
         featured.map((piece) => (
-          <section>
+          <section class="flex min-w-0 flex-col">
             <h2 class="type-heading mb-3">{piece.title}</h2>
-            <p class="type-body mb-6 max-w-2xl text-white">{piece.caption}</p>
-            <a href={piece.linkedInUrl} target="_blank" rel="noopener noreferrer" class="block max-w-md">
-              <div class:list={[piece.aspect, "overflow-hidden rounded-xl"]}>
+            <p class="type-body mb-4 text-white">{piece.caption}</p>
+            <a href={piece.linkedInUrl} target="_blank" rel="noopener noreferrer" class="mt-auto block">
+              <div class="aspect-[4/5] overflow-hidden rounded-xl">
                 <img
                   src={piece.image}
                   alt={piece.title}
-                  class:list={[
-                    "w-full",
-                    piece.aspect === "aspect-auto" ? "h-auto" : "h-full object-cover object-center",
-                  ]}
+                  class="h-full w-full object-cover object-top"
                 />
               </div>
             </a>
