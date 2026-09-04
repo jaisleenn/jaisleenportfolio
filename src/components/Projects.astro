@@ -11,47 +11,45 @@ const { projects } = Astro.props;
 ---
 
 <Section text="Featured Projects" href="projects">
-  {
-    projects.map(({ name, summary, image, linkPreview, campaignId, isNdaRestricted }, index) => {
-      const top = 98 + index * 40;
-      const isInternalLink = linkPreview?.startsWith('#');
-      return (
-        <div
-          style={`top: ${top}px;`}
-          class="sticky mb-8 overflow-hidden rounded-2xl border border-neutral/20 bg-black"
-        >
-          <div class="relative z-[1] grid h-[20rem] w-full grid-cols-2 rounded-2xl bg-black">
-            <div class="flex min-h-0 flex-col justify-center overflow-hidden px-6 py-6">
-              <h3 class="mb-3 font-serif text-2xl font-medium text-primary md:text-3xl">
-                {name}
-              </h3>
-              <p class="text-sm text-white md:text-base">{summary}</p>
-              <div class="flex gap-5 pt-5 text-primary">
-                {isNdaRestricted ? (
-                  <span class="text-neutral italic">NDA-restricted work</span>
-                ) : (
-                  <a
-                    href={linkPreview}
-                    target={isInternalLink ? undefined : "_blank"}
-                    class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                  >
-                    {campaignId ? "View Campaign" : "Preview"}
-                  </a>
-                )}
+  <div class="relative left-1/2 w-[min(72rem,calc(100vw-2.5rem))] -translate-x-1/2">
+    <div class="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
+      {
+        projects.map(({ name, summary, image, linkPreview, campaignId, isNdaRestricted }) => {
+          const isInternalLink = linkPreview?.startsWith("#");
+          return (
+            <div class="flex min-h-0 flex-col">
+              <div class="relative h-44 w-full overflow-hidden rounded-xl">
+                <Image
+                  class="absolute inset-0 h-full w-full object-cover object-center"
+                  src={image}
+                  alt={name}
+                  width="736"
+                  height="483"
+                />
+              </div>
+              <div class="flex flex-1 flex-col pt-5">
+                <h3 class="mb-2 font-serif text-xl font-medium text-primary md:text-2xl">
+                  {name}
+                </h3>
+                <p class="flex-1 text-sm leading-snug text-white">{summary}</p>
+                <div class="pt-4 text-sm text-primary">
+                  {isNdaRestricted ? (
+                    <span class="text-neutral italic">NDA-restricted work</span>
+                  ) : (
+                    <a
+                      href={linkPreview}
+                      target={isInternalLink ? undefined : "_blank"}
+                      class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
+                    >
+                      {campaignId ? "View Campaign" : "Preview"}
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-            <div class="relative min-h-0 overflow-hidden">
-              <Image
-                class="absolute inset-0 h-full w-full rounded-ss-xl rounded-ee-2xl object-cover object-center"
-                src={image}
-                alt={name}
-                width="736"
-                height="483"
-              />
-            </div>
-          </div>
-        </div>
-      );
-    })
-  }
+          );
+        })
+      }
+    </div>
+  </div>
 </Section>

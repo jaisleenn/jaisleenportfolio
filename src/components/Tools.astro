@@ -45,28 +45,27 @@ const groups: { label: string; items: Skill[] }[] = [
   { label: "Professional", items: professional },
 ];
 
-const pillClass =
-  "inline-block rounded-full border border-neutral/30 bg-neutral/10 px-4 py-2 text-sm text-white origin-center";
+const skillClass = "text-sm text-white";
 ---
 
-<section class="py-16">
-  <h2 class="mb-8 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">
+<section class="border-t border-neutral/15 pt-20 pb-10 md:pt-24 md:pb-12">
+  <h2 class="mb-14 font-serif text-4xl font-bold tracking-tighter text-white md:text-5xl">
     Tools & Skills
   </h2>
 
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-12">
     {
       groups.map((group) => (
         <div>
-          <h3 class="mb-3 font-serif text-sm font-medium tracking-wide text-primary">
+          <h3 class="mb-3 text-sm font-medium tracking-wide text-primary">
             {group.label}
           </h3>
-          <div class="flex flex-wrap gap-3">
+          <div class="flex flex-wrap gap-x-5 gap-y-2">
             {group.items.map((item) =>
               item.tooltip ? (
                 <span class="skill-tip relative inline-flex" data-skill-tooltip>
                   <span
-                    class={`${pillClass} cursor-default transition-transform duration-200 ease-out hover:scale-105`}
+                    class={`${skillClass} cursor-default underline decoration-neutral/30 decoration-dotted underline-offset-4`}
                     tabindex="0"
                     aria-describedby={`tip-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
                   >
@@ -76,13 +75,13 @@ const pillClass =
                     id={`tip-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
                     role="tooltip"
                     data-skill-tip
-                    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-64 rounded-lg border border-neutral/20 bg-white px-3 py-2 text-center text-xs leading-snug text-black opacity-0 shadow-sm transition-opacity duration-200 ease-out"
+                    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-64 py-2 text-center text-xs leading-snug text-neutral opacity-0 transition-opacity duration-200 ease-out"
                   >
                     {item.tooltip}
                   </span>
                 </span>
               ) : (
-                <span class={pillClass}>{item.name}</span>
+                <span class={skillClass}>{item.name}</span>
               ),
             )}
           </div>

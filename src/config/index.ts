@@ -89,7 +89,7 @@ I'm also a Research Assistant in Applied AI under Prof. Serkan Saka at SJSU, whe
   ],
   projects: [
     {
-      name: "Applied AI Research",
+      name: "Agentic AI Thought Leadership",
       summary:
         "Distilled 15+ academic papers and industry reports from MIT, Wharton, Stanford, and other institutions into executive-ready thought leadership on agentic AI, covering governance, cybersecurity, and employee motivation, for a major cloud software company.",
       image: "/applied-ai.jpg",
