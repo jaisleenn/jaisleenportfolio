@@ -22,9 +22,6 @@
   --font-weight-heading: 500;
   --font-weight-body: 400;
 
-  --width-page: 72rem;
-  --page-gutter: 1.25rem;
-
   --animate-slide-in: slide-in 600ms ease both;
 
   @keyframes slide-in {
@@ -59,13 +56,5 @@
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
     font-weight: var(--font-weight-body);
-  }
-
-  .page-wrap {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: var(--width-page);
-    margin-inline: auto;
-    padding-inline: var(--page-gutter);
   }
 }

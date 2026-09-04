@@ -7,34 +7,36 @@ const { name, summary, email } = Astro.props;
 ---
 
 <section class="pt-4 pb-12 md:pb-16" id="#hero">
-  <div class="flex flex-col gap-8 md:flex-row md:items-start md:gap-10">
-    <div class="relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-xl md:w-64 lg:w-72">
-      <Image
-        class="absolute inset-0 h-full w-full object-cover object-top"
-        src="/jaisleen-headshot.jpg"
-        alt="Jaisleen Nijjar"
-        width="682"
-        height="755"
-      />
-    </div>
-    <div class="min-w-0 flex-1">
-      <h1 class="type-hero mb-4">
-        {name}
-      </h1>
-      <p class="type-body mb-8 whitespace-pre-line text-white">
-        {summary}
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a
-          class="type-body inline-block rounded-full bg-primary px-6 py-3 text-[#fff]"
-          href={`mailto:${email}`}>Get in Touch</a
-        >
-        <a
-          class="type-body inline-block rounded-full bg-primary px-6 py-3 text-[#fff]"
-          href="https://linkedin.com/in/jaisleen-nijjar/"
-          target="_blank"
-          rel="noopener noreferrer">LinkedIn</a
-        >
+  <div class="relative left-1/2 w-[min(72rem,calc(100vw-2.5rem))] -translate-x-1/2">
+    <div class="flex flex-col gap-8 md:flex-row md:items-start md:gap-10">
+      <div class="relative aspect-[3/4] w-full shrink-0 overflow-hidden rounded-xl md:w-64 lg:w-72">
+        <Image
+          class="absolute inset-0 h-full w-full object-cover object-top"
+          src="/jaisleen-headshot.jpg"
+          alt="Jaisleen Nijjar"
+          width="682"
+          height="755"
+        />
+      </div>
+      <div class="min-w-0 flex-1">
+        <h1 class="type-hero mb-4">
+          {name}
+        </h1>
+        <p class="type-body mb-8 whitespace-pre-line text-white">
+          {summary}
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            class="type-body inline-block rounded-full bg-primary px-6 py-3 text-[#fff]"
+            href={`mailto:${email}`}>Get in Touch</a
+          >
+          <a
+            class="type-body inline-block rounded-full bg-primary px-6 py-3 text-[#fff]"
+            href="https://linkedin.com/in/jaisleen-nijjar/"
+            target="_blank"
+            rel="noopener noreferrer">LinkedIn</a
+          >
+        </div>
       </div>
     </div>
   </div>

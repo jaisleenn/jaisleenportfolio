@@ -11,7 +11,8 @@ const { projects } = Astro.props;
 ---
 
 <Section text="Featured Projects" href="projects">
-  <div class="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
+  <div class="relative left-1/2 w-[min(72rem,calc(100vw-2.5rem))] -translate-x-1/2">
+    <div class="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-10">
       {
         projects.map(({ name, summary, image, linkPreview, campaignId, isNdaRestricted }) => {
           const isInternalLink = linkPreview?.startsWith("#");
@@ -50,4 +51,5 @@ const { projects } = Astro.props;
         })
       }
     </div>
+  </div>
 </Section>
